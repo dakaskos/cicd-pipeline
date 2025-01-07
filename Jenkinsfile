@@ -19,5 +19,11 @@ pipeline {
       }
     }
 
+    stage('Docker image build') {
+      steps {
+        sh 'docker build -t amirjaminov/cicd:$BUILD_NUMBER .'
+      }
+    }
+
   }
 }
